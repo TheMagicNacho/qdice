@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -43,8 +44,22 @@ public class MainActivity extends AppCompatActivity {
 
                 Random randomGenerator = new Random();
                 int randomInt = randomGenerator.nextInt(b) + 1;
+// new experiemnt to test list array
+                ArrayList<Integer> myCoords;
+                myCoords = new ArrayList<>();
+                myCoords.add(10);
+                myCoords.add(20);
+                myCoords.add(30);
+                myCoords.add(40);
+                myCoords.add(randomInt);
 
-                displayRoll.setText(Integer.toString(randomInt));
+                Iterator<Integer> myListIterator = myCoords.iterator();
+                while (myListIterator.hasNext()) {
+                    Integer coord = myListIterator.next();
+                    displayRoll.setText(Integer.toString(coord));
+                }
+
+                //displayRoll.setText(Integer.toString(randomInt)); un commment to revert to original
             }
         });
     }
